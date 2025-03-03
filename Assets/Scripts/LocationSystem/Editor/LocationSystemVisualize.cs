@@ -11,10 +11,7 @@ namespace Prechool.LocationSystem
         [SerializeField] private int m_SelectedIndex = -1;
         [SerializeField] private float m_MapScale = 0.5f;
         [SerializeField] private float m_LocScale = 0.4f;
-        [SerializeField] private Texture forestMap;
-        [SerializeField] private Texture locSymbol;
-        private GPSCoord topLeftCoord = new GPSCoord(51.18345f, -0.8520539f);
-        private GPSCoord bottomRightCoord = new GPSCoord(51.15710f, -0.8260767f);
+        [SerializeField] private MapMeta mapMeta;
         private Image mapElement;
         private ListView listView;
 
@@ -46,12 +43,14 @@ namespace Prechool.LocationSystem
             // Map Holder
             var mapHolder = new ScrollView();
             mapHolder.style.flexGrow = 1;
+            mapHolder.mode = ScrollViewMode.VerticalAndHorizontal;
+            
             rightPane.Add(mapHolder);
 
             mapElement = new Image();
-            mapElement.image = forestMap;
-            mapElement.style.width = forestMap.width * m_MapScale;
-            mapElement.style.height = forestMap.height * m_MapScale;
+            mapElement.image = mapMeta.forestMap;
+            mapElement.style.width = mapMeta.forestMap.width * m_MapScale;
+            mapElement.style.height = mapMeta.forestMap.height * m_MapScale;
             mapHolder.Add(mapElement);
 
             // Left Pane
@@ -88,13 +87,24 @@ namespace Prechool.LocationSystem
                 {
                     var percentage = GetMapPercentage(locEvent.location);
                     var symbol = new Image();
-                    symbol.image = locSymbol;
-                    symbol.style.width = locSymbol.width * m_LocScale;
-                    symbol.style.height = locSymbol.height * m_LocScale;
+                    symbol.image = mapMeta.locSymbol;
+                    symbol.style.width = mapMeta.locSymbol.width * m_LocScale;
+                    symbol.style.height = mapMeta.locSymbol.height * m_LocScale;
                     symbol.style.position = Position.Absolute;
                     symbol.style.left = percentage.Item1 * mapElement.style.width.value.value;
                     symbol.style.top = percentage.Item2 * mapElement.style.height.value.value;
-                    symbol.style.translate = new Translate(-locSymbol.width / 2 * m_LocScale, -locSymbol.height * m_LocScale, 0);
+                    symbol.style.translate = new Translate(-mapMeta.locSymbol.width / 2 * m_LocScale, -mapMeta.locSymbol.height * m_LocScale, 0);
+
+                    var circle = new VisualElement();
+                    circle.style.width = locEvent.radiusM * 2 / mapMeta.MapWidthMetres * mapElement.style.width.value.value;
+                    circle.style.height = locEvent.radiusM * 2 / mapMeta.MapHeightMetres * mapElement.style.height.value.value;
+                    circle.style.left = percentage.Item1 * mapElement.style.width.value.value;
+                    circle.style.top = percentage.Item2 * mapElement.style.height.value.value;
+                    circle.style.backgroundColor = new Color(0, 0.5f, 1, 0.8f);
+                    circle.SetBorderRadius(new Length(100, LengthUnit.Percent));
+                    circle.style.translate = new Translate(-circle.style.width.value.value / 2, -circle.style.width.value.value / 2, 0);
+
+                    mapElement.Add(circle);
                     mapElement.Add(symbol);
                 }
             }
@@ -102,8 +112,8 @@ namespace Prechool.LocationSystem
 
         private Tuple<float, float> GetMapPercentage(GPSCoord coord)
         {
-            var x = (coord.longitude - topLeftCoord.longitude)  / (bottomRightCoord.longitude - topLeftCoord.longitude);
-            var y = (coord.latiude - topLeftCoord.latiude) / (bottomRightCoord.latiude - topLeftCoord.latiude);
+            var x = (coord.longitude - mapMeta.topLeftCoord.longitude) / (mapMeta.bottomRightCoord.longitude - mapMeta.topLeftCoord.longitude);
+            var y = (coord.latiude - mapMeta.topLeftCoord.latiude) / (mapMeta.bottomRightCoord.latiude - mapMeta.topLeftCoord.latiude);
             return new Tuple<float, float>(x, y);
         }
 
@@ -124,8 +134,8 @@ namespace Prechool.LocationSystem
             mapScale.RegisterValueChangedCallback((evt) =>
             {
                 m_MapScale = evt.newValue;
-                mapElement.style.width = forestMap.width * m_MapScale;
-                mapElement.style.height = forestMap.height * m_MapScale;
+                mapElement.style.width = mapMeta.forestMap.width * m_MapScale;
+                mapElement.style.height = mapMeta.forestMap.height * m_MapScale;
                 OnSelectedChange(listView.selectedItems);
 
             });
@@ -134,15 +144,19 @@ namespace Prechool.LocationSystem
                 m_LocScale = evt.newValue;
                 foreach (var loc in mapElement.Children())
                 {
-                    loc.style.width = locSymbol.width * m_LocScale;
-                    loc.style.height = locSymbol.height * m_LocScale;
-                    loc.style.translate = new Translate(-locSymbol.width / 2 * m_LocScale, -locSymbol.height * m_LocScale, 0);
+                    if (loc is not Image)
+                    {
+                        continue;
+                    }
+                    loc.style.width = mapMeta.locSymbol.width * m_LocScale;
+                    loc.style.height = mapMeta.locSymbol.height * m_LocScale;
+                    loc.style.translate = new Translate(-mapMeta.locSymbol.width / 2 * m_LocScale, -mapMeta.locSymbol.height * m_LocScale, 0);
                 }
             });
 
             var refreshBtn = new Button();
             refreshBtn.text = "Refresh";
-            refreshBtn.clicked += () => {rootVisualElement.Clear(); CreateGUI();};
+            refreshBtn.clicked += () => { rootVisualElement.Clear(); CreateGUI(); };
 
             container.Add(refreshBtn);
             container.Add(mapScale);

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50b5bd58c2b3e4a54a00c6db60349dd7, type: 3}
+  m_Name: MapMetaData
+  m_EditorClassIdentifier: 
+  locSymbol: {fileID: 2800000, guid: d12d7e75bbf40c4409648dcc7b66ac4b, type: 3}
+  forestMap: {fileID: 2800000, guid: 596f1aa7f80270943b5366bcf9f355c0, type: 3}
+  topLeftCoord:
+    latiude: 51.18345
+    longitude: -0.8520539
+  bottomRightCoord:
+    latiude: 51.1571
+    longitude: -0.8260767
+  mapWidthMetres: 1809.2489
+  mapHeightMetres: 2927.5652

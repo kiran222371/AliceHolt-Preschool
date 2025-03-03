@@ -21,19 +21,27 @@ public static class MyEditorUtils
         return assets;
     }
 
-    public static void SetPadding(this VisualElement element, int padding)
+    public static void SetPadding(this VisualElement element, Length length)
     {
-        element.style.paddingTop = padding;
-        element.style.paddingBottom = padding;
-        element.style.paddingLeft = padding;
-        element.style.paddingRight = padding;
+        element.style.paddingTop = length;
+        element.style.paddingBottom = length;
+        element.style.paddingLeft = length;
+        element.style.paddingRight = length;
     }
 
-    public static void SetMargin(this VisualElement element, int margin)
+    public static void SetMargin(this VisualElement element, Length length)
     {
-        element.style.marginTop = margin;
-        element.style.marginBottom = margin;
-        element.style.marginLeft = margin;
-        element.style.marginRight = margin;
+        element.style.marginTop = length;
+        element.style.marginBottom = length;
+        element.style.marginLeft = length;
+        element.style.marginRight = length;
+    }
+
+    public static void SetBorderRadius(this VisualElement element, Length length)
+    {
+        element.style.borderTopLeftRadius = length;
+        element.style.borderTopRightRadius = length;
+        element.style.borderBottomLeftRadius = length;
+        element.style.borderBottomRightRadius = length;
     }
 }
