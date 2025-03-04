@@ -20,28 +20,4 @@ public static class MyEditorUtils
             assets[i] = AssetDatabase.LoadAssetAtPath<T>(AssetDatabase.GUIDToAssetPath(guids[i]));
         return assets;
     }
-
-    public static void SetPadding(this VisualElement element, Length length)
-    {
-        element.style.paddingTop = length;
-        element.style.paddingBottom = length;
-        element.style.paddingLeft = length;
-        element.style.paddingRight = length;
-    }
-
-    public static void SetMargin(this VisualElement element, Length length)
-    {
-        element.style.marginTop = length;
-        element.style.marginBottom = length;
-        element.style.marginLeft = length;
-        element.style.marginRight = length;
-    }
-
-    public static void SetBorderRadius(this VisualElement element, Length length)
-    {
-        element.style.borderTopLeftRadius = length;
-        element.style.borderTopRightRadius = length;
-        element.style.borderBottomLeftRadius = length;
-        element.style.borderBottomRightRadius = length;
-    }
 }

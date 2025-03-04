@@ -15,12 +15,11 @@ namespace Prechool.LocationSystem
         private Image mapElement;
         private ListView listView;
 
-        [MenuItem("Preschool/Location System/Visualize")]
+        [MenuItem("Preschool/Location System Visualize")]
         public static void ShowMyEditor()
         {
             // This method is called when the user selects the menu item in the Editor.
-            EditorWindow wnd = GetWindow<LocationSystemViewer>();
-            wnd.titleContent = new GUIContent("AR Location Event Viewer");
+            EditorWindow wnd = GetWindow<LocationSystemViewer>("AR Location Event Viewer");
 
             // Limit size of the window.
             wnd.minSize = new Vector2(450, 200);
