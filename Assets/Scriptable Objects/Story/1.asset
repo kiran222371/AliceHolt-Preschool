@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0d70a32b01d568449e616c13c46631c, type: 3}
+  m_Name: 1
+  m_EditorClassIdentifier: 
+  info:
+    title: Test Sory
+    description: A story for testing / sample
+    index: 0
+    characters:
+    - Fox
+    - Astra
+  lines:
+  - speaker: Fox
+    text: "Oh? Another traveler who\u2019s lost their way? Welcome to the heart of
+      the forest! But tell me, Astra, do you want to see the real forest or the most
+      perfect one?  \r"
+    voice: {fileID: 0}
+  - speaker: Astra
+    text: "The most perfect forest? What do you mean?  \r"
+    voice: {fileID: 0}
+  - speaker: Fox
+    text: "Look! No storms, no decay, no noise\u2026 just perfect, like a painting.
+      Do you like it?  \r"
+    voice: {fileID: 0}
+  - speaker: Astra
+    text: "...It\u2019s not real.  \r"
+    voice: {fileID: 0}
+  - speaker: Fox
+    text: "Clever one! This is just one way to \"preserve\" the forest\u2014keeping
+      it frozen at its most beautiful moment. But\u2026 is it still a forest?  \r"
+    voice: {fileID: 0}
+  - speaker: Astra
+    text: "A forest should be alive. It should grow and change.  \r"
+    voice: {fileID: 0}
+  - speaker: Fox
+    text: "Exactly. But some people would rather turn a forest into a picture, a
+      piece of data, than let it grow freely. What do you think is better?  \r"
+    voice: {fileID: 0}

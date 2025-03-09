@@ -7,20 +7,26 @@ namespace Prechool.Character
     public class Character : MonoBehaviour, IMoveable, ILookable, ISpeakable
     {
         [Header("Animations")]
-        public bool lookValid;
+        [Tooltip("Rotate the body towards the look direction when the character movement is below minMoveDistance")]
+        public bool faceLookStill;
         [Range(0, 90)]
         [SerializeField] private float maxLookAngle;
         [Range(0, 5)]
         [Tooltip("How fast the character rotates its head to look at target")]
         [SerializeField] private float lookSpeed = 1;
-        [Tooltip("How fast the character rotates on the Y axis")]
-        [SerializeField] private float rotSpeed = 1;
+        [Tooltip("How fast the character rotates (deg/sec) on the Y axis")]
+        [SerializeField] private float rotSpeed = 180;
+        [Tooltip("How fast the character moves")]
+        [SerializeField] private float moveSpeed = 1;
         [SerializeField] private float minMoveDistance = 0.1f;
+        private bool lookValid;
         private Vector3 targetLookPosition;
         private Vector3 lookPosition;
         private float targetLookWeight;
         private float lookWeight;
         private Quaternion targetRot;
+        private Vector3 targetMovement;
+        private float targetVelForward;
         [Header("Agent")]
         // components
         private NavMeshAgent agent;
@@ -41,6 +47,7 @@ namespace Prechool.Character
         void Update()
         {
             LocomotionUpdate();
+            LookUpdate();
             if (agent != null)
                 AgentUpdate();
         }
@@ -52,10 +59,7 @@ namespace Prechool.Character
         }
         public void Move(Vector3 movement)
         {
-            if(movement.magnitude < minMoveDistance)
-                return;
-            targetRot = Quaternion.LookRotation(movement, Vector3.up);
-            animator.SetFloat("Vel Forward", movement.magnitude);
+            targetMovement += movement;
         }
 
         public void LookAt(Vector3 position)
@@ -68,10 +72,37 @@ namespace Prechool.Character
             throw new System.NotImplementedException();
         }
 
+        /// <summary>
+        /// Only manually update the rotation when running, otherwise use root motions
+        /// </summary>
         private void LocomotionUpdate()
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, Time.deltaTime * rotSpeed);
+            if (targetMovement.magnitude > minMoveDistance)
+            {
+                targetVelForward = Mathf.Clamp(targetMovement.magnitude, 0, 2);
 
+                targetRot = Quaternion.LookRotation(targetMovement, Vector3.up);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRot, Time.deltaTime * rotSpeed);
+                animator.SetInteger("Rot Y Deg", 0);
+            }
+            else
+            {
+                targetVelForward = 0;
+                if (faceLookStill)
+                {
+                    targetRot = Quaternion.LookRotation(targetLookPosition - transform.position, Vector3.up);
+                    float yDeg = targetRot.eulerAngles.y - transform.rotation.eulerAngles.y;
+                    animator.SetInteger("Rot Y Deg", 90 * Mathf.RoundToInt(yDeg / 90));
+                }
+            }
+            targetMovement.Zero();
+
+            animator.SetFloat("Vel Forward", Mathf.Lerp(animator.GetFloat("Vel Forward"), targetVelForward, Time.deltaTime * moveSpeed));
+
+        }
+
+        private void LookUpdate()
+        {
             // If targetLookPosition is within maxLookAngle, then targetLookWeight is 1
             // If look valid (targetLookWeight is 1), then 
             var minLookDot = 1 - maxLookAngle / 90;

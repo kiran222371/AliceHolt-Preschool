@@ -1,10 +1,6 @@
-using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEditor;
-using UnityEditor.UIElements;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class ScriptLoader : EditorWindow
 {
@@ -28,7 +24,7 @@ public class ScriptLoader : EditorWindow
         storyScript = (StoryScript)EditorGUILayout.ObjectField("Load to", storyScript, typeof(StoryScript), false);
         if (GUILayout.Button("Load Script"))
         {
-            var matches = new Regex(@"(\w+)\s*:\s*(\w+)\s*").Matches(scriptText);
+            var matches = new Regex(@"(\w+).*:\s*(.+)\s*").Matches(scriptText);
             storyScript.lines = new StoryScript.Line[matches.Count];
             for (int i = 0; i < matches.Count; i++)
             {

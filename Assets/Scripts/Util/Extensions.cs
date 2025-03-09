@@ -33,4 +33,11 @@ public static class Extensions
         element.style.borderLeftColor = color;
         element.style.borderRightColor = color;
     }
+
+    public static void Zero(this ref Vector3 vector)
+    {
+        vector.x = 0;
+        vector.y = 0;
+        vector.z = 0;
+    }
 }
