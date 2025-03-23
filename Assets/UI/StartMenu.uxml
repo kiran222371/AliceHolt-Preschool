@@ -1,0 +1,42 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/GameStyle.uss?fileID=7433441132597879392&amp;guid=28c936e45dd1fe845a3c7a78fec851b3&amp;type=3#GameStyle" />
+    <engine:VisualElement style="width: 100%; height: 100%; flex-direction: row;">
+        <engine:VisualElement name="SettingsPanel" class="panel" style="flex-grow: 0; flex-basis: 0; overflow: hidden;">
+            <engine:VisualElement class="header">
+                <engine:VisualElement style="flex-grow: 1; padding-top: 30px; padding-right: 30px; padding-bottom: 30px; padding-left: 30px; align-self: center;">
+                    <engine:Label text="Settings" style="-unity-text-align: middle-left;" />
+                </engine:VisualElement>
+                <engine:Button text="X" name="CloseSettings" style="border-top-left-radius: 100%; border-top-right-radius: 100%; border-bottom-right-radius: 100%; border-bottom-left-radius: 100%; width: 100px; height: 100px; right: 0; position: absolute; margin-top: 20px; margin-right: 20px; margin-bottom: 20px; margin-left: 20px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; background-color: rgb(255, 93, 93); justify-content: flex-start;" />
+            </engine:VisualElement>
+            <engine:VisualElement class="panelContent">
+                <engine:Label text="Settings Content" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+        <engine:VisualElement name="AboutPanel" class="panel" style="flex-basis: 0; overflow: hidden; flex-grow: 0;">
+            <engine:VisualElement class="header">
+                <engine:VisualElement style="flex-grow: 1; padding-top: 30px; padding-right: 30px; padding-bottom: 30px; padding-left: 30px; align-self: center;">
+                    <engine:Label text="Settings" style="-unity-text-align: middle-left;" />
+                </engine:VisualElement>
+                <engine:Button text="X" name="CloseAbout" style="border-top-left-radius: 100%; border-top-right-radius: 100%; border-bottom-right-radius: 100%; border-bottom-left-radius: 100%; width: 100px; height: 100px; right: 0; position: absolute; margin-top: 20px; margin-right: 20px; margin-bottom: 20px; margin-left: 20px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; background-color: rgb(255, 93, 93); justify-content: flex-start;" />
+            </engine:VisualElement>
+            <engine:VisualElement class="panelContent">
+                <engine:Label text="Settings Content" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+        <engine:VisualElement name="StartPanel" class="panel" style="overflow: hidden; flex-grow: 1; flex-basis: 0;">
+            <engine:VisualElement style="padding-top: 10%; padding-right: 10%; padding-bottom: 10%; padding-left: 10%; background-image: url(&quot;project://database/Assets/Textures/StartMenuBackground.jpeg?fileID=2800000&amp;guid=7cdfd87ea979c4342b59966a937efea7&amp;type=3#StartMenuBackground&quot;); -unity-background-scale-mode: scale-and-crop; flex-grow: 1;">
+                <engine:VisualElement style="flex-grow: 1; justify-content: center;">
+                    <engine:VisualElement style="justify-content: center; margin-top: 50px; margin-right: 50px; margin-bottom: 50px; margin-left: 50px;">
+                        <engine:Label text="The Secret of the Forest" style="font-size: 100px; -unity-text-align: upper-center; color: rgb(255, 255, 255); white-space: normal; -unity-font-style: bold;" />
+                    </engine:VisualElement>
+                    <engine:VisualElement style="padding-top: 10%; padding-right: 10%; padding-bottom: 10%; padding-left: 10%; justify-content: flex-start; align-items: center;">
+                        <engine:Button text="Start Adventure" name="Start" class="bubble" style="background-color: rgb(125, 239, 84);" />
+                        <engine:Button text="Settings" name="Settings" class="bubble" style="background-color: rgb(146, 243, 255);" />
+                        <engine:Button text="About" name="About" class="bubble" style="background-color: rgb(246, 250, 97);" />
+                        <engine:Button text="Exit" name="Exit" class="bubble" style="background-color: rgb(255, 129, 129);" />
+                    </engine:VisualElement>
+                </engine:VisualElement>
+            </engine:VisualElement>
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>

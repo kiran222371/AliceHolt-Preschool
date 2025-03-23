@@ -174,7 +174,7 @@ to solve this problem, please switch the context using the "Unity Shader Context
 For details, see this Rider document about "Unity Shader Context picker in the status bar":
 https://github.com/JetBrains/resharper-unity/wiki/Switching-code-analysis-context-for-hlsl-cginc-files-in-Rider
 */ 
-Shader "SimpleURPToonLitExample(With Outline)"
+Shader "URPToonLitOutline"
 {
     Properties
     {
