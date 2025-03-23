@@ -25,6 +25,8 @@ public class ScriptLoader : EditorWindow
         if (GUILayout.Button("Load Script"))
         {
             var matches = new Regex(@"(\w+).*:\s*(.+)\s*").Matches(scriptText);
+            EditorUtility.SetDirty(storyScript);
+            Undo.RecordObject(storyScript, "Load Script");
             storyScript.lines = new StoryScript.Line[matches.Count];
             for (int i = 0; i < matches.Count; i++)
             {

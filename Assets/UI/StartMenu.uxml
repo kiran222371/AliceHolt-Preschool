@@ -15,12 +15,12 @@
         <engine:VisualElement name="AboutPanel" class="panel" style="flex-basis: 0; overflow: hidden; flex-grow: 0;">
             <engine:VisualElement class="header">
                 <engine:VisualElement style="flex-grow: 1; padding-top: 30px; padding-right: 30px; padding-bottom: 30px; padding-left: 30px; align-self: center;">
-                    <engine:Label text="Settings" style="-unity-text-align: middle-left;" />
+                    <engine:Label text="About" style="-unity-text-align: middle-left;" />
                 </engine:VisualElement>
                 <engine:Button text="X" name="CloseAbout" style="border-top-left-radius: 100%; border-top-right-radius: 100%; border-bottom-right-radius: 100%; border-bottom-left-radius: 100%; width: 100px; height: 100px; right: 0; position: absolute; margin-top: 20px; margin-right: 20px; margin-bottom: 20px; margin-left: 20px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; background-color: rgb(255, 93, 93); justify-content: flex-start;" />
             </engine:VisualElement>
             <engine:VisualElement class="panelContent">
-                <engine:Label text="Settings Content" />
+                <engine:Label text="About Content" />
             </engine:VisualElement>
         </engine:VisualElement>
         <engine:VisualElement name="StartPanel" class="panel" style="overflow: hidden; flex-grow: 1; flex-basis: 0;">

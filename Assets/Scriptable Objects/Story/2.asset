@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0d70a32b01d568449e616c13c46631c, type: 3}
+  m_Name: 2
+  m_EditorClassIdentifier: 
+  info:
+    title: Test Sory
+    description: A story for testing / sample
+    index: 0
+    characters:
+    - Owl
+    - Astra
+  lines:
+  - speaker: Owl
+    text: "Oh, a new visitor. Astra, would you like to hear a story that\u2019s disappearing? 
+      \r"
+    voice: {fileID: 0}
+  - speaker: Astra
+    text: "A disappearing story?  \r"
+    voice: {fileID: 0}
+  - speaker: Owl
+    text: "See this? These are the memories of the forest. But they are being erased. 
+      \r"
+    voice: {fileID: 0}
+  - speaker: Astra
+    text: "Why?  \r"
+    voice: {fileID: 0}
+  - speaker: Owl
+    text: "Because part of this forest is already gone. No one remembers its name.
+      No one tells its stories. So, it fades away as if it never existed.  \r"
+    voice: {fileID: 0}
+  - speaker: Astra
+    text: "What can I do?  \r"
+    voice: {fileID: 0}
+  - speaker: Owl
+    text: "It\u2019s simple\u2014remember it, tell its story. As long as someone
+      remembers, the forest will never truly disappear.  \r"
+    voice: {fileID: 0}

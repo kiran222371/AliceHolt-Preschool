@@ -14,7 +14,7 @@ public class StartMenuUI : MonoBehaviour
             root.Q<VisualElement>("SettingsPanel"),
             root.Q<VisualElement>("AboutPanel")
         };
-        root.Q<Button>("Start").clicked += () => { SceneManager.LoadScene("1"); };
+        root.Q<Button>("Start").clicked += () => { SceneManager.LoadScene("Game Base"); SceneManager.LoadSceneAsync("1", LoadSceneMode.Additive); };
         root.Q<Button>("Settings").clicked += () =>PanelToggle(1);
         root.Q<Button>("About").clicked += () => PanelToggle(2);
         root.Q<Button>("CloseSettings").clicked += () => PanelToggle(0);
@@ -24,7 +24,6 @@ public class StartMenuUI : MonoBehaviour
 
     void PanelToggle(int panelIndex)
     {
-        Debug.Log("PanelToggle: " + panelIndex);
         for (int i = 0; i < panels.Length; i++)
         {
             panels[i].style.flexGrow = i == panelIndex ? 1 : 0;

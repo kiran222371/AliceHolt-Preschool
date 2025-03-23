@@ -34,7 +34,11 @@ public class StoryScriptPlayer : MonoBehaviour
     }
     public void NextLine(SelectEnterEventArgs args)
     {
-        lineIndex++;
+        if(++lineIndex >= script.lines.Length)
+        {
+            gamePlayUI?.ShowChoices();
+            return;
+        }
 
         StoryScript.Line line = script.lines[lineIndex];
         gamePlayUI?.ShowDialouge(line);

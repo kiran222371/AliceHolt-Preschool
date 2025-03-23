@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0d70a32b01d568449e616c13c46631c, type: 3}
+  m_Name: 3
+  m_EditorClassIdentifier: 
+  info:
+    title: Test Sory
+    description: A story for testing / sample
+    index: 0
+    characters:
+    - Fox
+    - Astra
+  lines:
+  - speaker: Tiger
+    text: "Do you think this is still a forest?  \r"
+    voice: {fileID: 0}
+  - speaker: Astra
+    text: "\u2026Not really.  \r"
+    voice: {fileID: 0}
+  - speaker: Tiger
+    text: "They say this will \"save\" the forest, that this way, it will never be
+      destroyed. So, they turned it into data, into part of the machines\u2026 But
+      do you know what?  \r"
+    voice: {fileID: 0}
+  - speaker: Astra
+    text: "A forest should be free.  \r"
+    voice: {fileID: 0}
+  - speaker: Tiger
+    text: "Good. Your heart knows the truth.  \r"
+    voice: {fileID: 0}

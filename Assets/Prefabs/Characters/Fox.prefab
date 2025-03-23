@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f6aa19fda6c67464890c43d019ecb2ba,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6aa19fda6c67464890c43d019ecb2ba,
         type: 3}
@@ -80,6 +80,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 984879358789991157}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f6aa19fda6c67464890c43d019ecb2ba,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5782461191381439380}
   m_SourcePrefab: {fileID: 100100000, guid: f6aa19fda6c67464890c43d019ecb2ba, type: 3}
 --- !u!1 &4797297908941552418 stripped
 GameObject:
@@ -99,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abb64dfc93c1cfa4dbd05bf72a695d5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  faceLookStill: 0
+  faceLookStill: 1
   maxLookAngle: 60
   lookSpeed: 1
   rotSpeed: 180
@@ -118,3 +122,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveTarget: {fileID: 0}
+--- !u!114 &5782461191381439380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4797297908941552418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb2c5b0c3a5ff644ea1154fe7c014e7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookTarget: {fileID: 0}

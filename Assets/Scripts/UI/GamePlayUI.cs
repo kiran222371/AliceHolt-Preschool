@@ -1,9 +1,11 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class GamePlayUI : MonoBehaviour
 {
+    [SerializeField] private string nextSceneName;
     [Header("Dialouge Animation")]
     [HideInInspector] public VisualElement dialougeBox;
     [SerializeField] private float charPerSec;
@@ -12,6 +14,7 @@ public class GamePlayUI : MonoBehaviour
     private Label dialougeLabel;
     private Coroutine dialougeRoutine;
     private StoryScriptPlayer scriptPlayer;
+    private bool choiceShown;
     void Start()
     {
         root = GetComponent<UIDocument>().rootVisualElement;
@@ -30,6 +33,22 @@ public class GamePlayUI : MonoBehaviour
             charPerSec = 1;
             Debug.LogWarning("CharPerSec not valid, defaulting to 1");
         }
+    }
+
+    public void ShowChoices()
+    {
+        if(choiceShown)
+            return;
+        var choicoePanel = root.Q<VisualElement>("ChoicePanel");
+        choicoePanel.style.opacity = 1;
+        var choice = root.Q<Button>("Choice");
+        choice.text = "Next Scene";
+        choice.clicked += () =>
+        {
+            SceneManager.LoadSceneAsync(nextSceneName, LoadSceneMode.Additive);
+            SceneManager.UnloadSceneAsync(gameObject.scene);
+        };
+        choiceShown = true;
     }
 
     public void ShowDialouge(StoryScript.Line line)
