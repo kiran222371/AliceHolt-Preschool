@@ -10,7 +10,7 @@ namespace Prechool.Character
         [Tooltip("Rotate the body towards the look direction when the character movement is below minMoveDistance")]
         public bool faceLookStill;
         [Range(0, 90)]
-        [SerializeField] private float maxLookAngle;
+        [SerializeField] private float maxLookAngle = 60;
         [Range(0, 5)]
         [Tooltip("How fast the character rotates its head to look at target")]
         [SerializeField] private float lookSpeed = 1;
