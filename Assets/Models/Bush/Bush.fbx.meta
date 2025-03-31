@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 674d0998b8fa9124aa41ca63b2cd2fb4
+guid: 634cd18933e521741a02992c3866b165
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.006
-    second: {fileID: 2100000, guid: 070df088c6d19bd4d99552fce75e643a, type: 2}
+      name: Material.001
+    second: {fileID: 2100000, guid: fa9ba88da25c0ff45828608da0338252, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bush inside texture
+    second: {fileID: 2100000, guid: a168dba3be745ba44944eccb3f48783d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -93,7 +98,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.1
+    globalScale: 0.001
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
