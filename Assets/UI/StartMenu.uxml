@@ -27,7 +27,7 @@
             <engine:VisualElement style="padding-top: 10%; padding-right: 10%; padding-bottom: 10%; padding-left: 10%; background-image: url(&quot;project://database/Assets/Textures/StartMenuBackground.jpeg?fileID=2800000&amp;guid=7cdfd87ea979c4342b59966a937efea7&amp;type=3#StartMenuBackground&quot;); -unity-background-scale-mode: scale-and-crop; flex-grow: 1;">
                 <engine:VisualElement style="flex-grow: 1; justify-content: center;">
                     <engine:VisualElement style="justify-content: center; margin-top: 50px; margin-right: 50px; margin-bottom: 50px; margin-left: 50px;">
-                        <engine:Label text="The Secret of the Forest" style="font-size: 100px; -unity-text-align: upper-center; color: rgb(255, 255, 255); white-space: normal; -unity-font-style: bold;" />
+                        <engine:Label text="The Secret of the Forest" style="font-size: 170px; -unity-text-align: upper-center; color: rgb(255, 255, 255); white-space: normal; -unity-font-style: bold;" />
                     </engine:VisualElement>
                     <engine:VisualElement style="padding-top: 10%; padding-right: 10%; padding-bottom: 10%; padding-left: 10%; justify-content: flex-start; align-items: center;">
                         <engine:Button text="Start Adventure" name="Start" class="bubble" style="background-color: rgb(125, 239, 84);" />
