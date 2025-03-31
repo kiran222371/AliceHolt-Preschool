@@ -1,39 +1,41 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/GameStyle.uss?fileID=7433441132597879392&amp;guid=28c936e45dd1fe845a3c7a78fec851b3&amp;type=3#GameStyle" />
-    <engine:VisualElement style="width: 100%; height: 100%; flex-direction: row;">
-        <engine:VisualElement name="SettingsPanel" class="panel" style="flex-grow: 0; flex-basis: 0; overflow: hidden;">
+    <engine:VisualElement style="width: 100%; height: 100%; flex-direction: row; background-image: url(&quot;project://database/Assets/Textures/StartMenuBackground.jpeg?fileID=2800000&amp;guid=7cdfd87ea979c4342b59966a937efea7&amp;type=3#StartMenuBackground&quot;); -unity-background-scale-mode: scale-and-crop; -unity-background-image-tint-color: rgb(129, 129, 129);">
+        <engine:VisualElement name="LevelsPanel" class="panel" style="flex-basis: 0; overflow: hidden; flex-grow: 0;">
             <engine:VisualElement class="header">
+                <engine:Button name="CloseLevels" style="width: 100px; height: 100px; margin-top: 20px; margin-right: 20px; margin-bottom: 20px; margin-left: 20px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; justify-content: flex-start; background-image: url(&quot;project://database/Assets/UI/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=-2236324273849735119&amp;guid=d87cc5413c4b8114eaf662aa5432af00&amp;type=3#arrow-left@2x&quot;); background-color: rgba(188, 188, 188, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);" />
                 <engine:VisualElement style="flex-grow: 1; padding-top: 30px; padding-right: 30px; padding-bottom: 30px; padding-left: 30px; align-self: center;">
-                    <engine:Label text="Settings" style="-unity-text-align: middle-left;" />
+                    <engine:Label text="Level Selector" style="-unity-text-align: middle-left; -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Fonts/MODULAR-14.otf?fileID=12800000&amp;guid=418a032fd95c45944b379a053eee70f4&amp;type=3#MODULAR-14&quot;);" />
                 </engine:VisualElement>
-                <engine:Button text="X" name="CloseSettings" style="border-top-left-radius: 100%; border-top-right-radius: 100%; border-bottom-right-radius: 100%; border-bottom-left-radius: 100%; width: 100px; height: 100px; right: 0; position: absolute; margin-top: 20px; margin-right: 20px; margin-bottom: 20px; margin-left: 20px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; background-color: rgb(255, 93, 93); justify-content: flex-start;" />
             </engine:VisualElement>
-            <engine:VisualElement class="panelContent">
-                <engine:Label text="Settings Content" />
+            <engine:VisualElement class="panelContent" style="color: rgb(255, 255, 255); -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Fonts/Poppins-Regular.ttf?fileID=12800000&amp;guid=fd979468792814846a383d7f1485f5d2&amp;type=3#Poppins-Regular&quot;); align-items: center;">
+                <engine:Button text="Level 1 " name="l1" class="bubble" />
+                <engine:Button text="Level 2" name="l2" class="bubble" />
+                <engine:Button text="Level 3" name="l3" class="bubble" />
             </engine:VisualElement>
         </engine:VisualElement>
         <engine:VisualElement name="AboutPanel" class="panel" style="flex-basis: 0; overflow: hidden; flex-grow: 0;">
             <engine:VisualElement class="header">
+                <engine:Button name="CloseAbout" style="width: 100px; height: 100px; margin-top: 20px; margin-right: 20px; margin-bottom: 20px; margin-left: 20px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; justify-content: flex-start; background-image: url(&quot;project://database/Assets/UI/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=-2236324273849735119&amp;guid=d87cc5413c4b8114eaf662aa5432af00&amp;type=3#arrow-left@2x&quot;); background-color: rgba(188, 188, 188, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);" />
                 <engine:VisualElement style="flex-grow: 1; padding-top: 30px; padding-right: 30px; padding-bottom: 30px; padding-left: 30px; align-self: center;">
-                    <engine:Label text="About" style="-unity-text-align: middle-left;" />
+                    <engine:Label text="About" style="-unity-text-align: middle-left; -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Fonts/MODULAR-14.otf?fileID=12800000&amp;guid=418a032fd95c45944b379a053eee70f4&amp;type=3#MODULAR-14&quot;);" />
                 </engine:VisualElement>
-                <engine:Button text="X" name="CloseAbout" style="border-top-left-radius: 100%; border-top-right-radius: 100%; border-bottom-right-radius: 100%; border-bottom-left-radius: 100%; width: 100px; height: 100px; right: 0; position: absolute; margin-top: 20px; margin-right: 20px; margin-bottom: 20px; margin-left: 20px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; background-color: rgb(255, 93, 93); justify-content: flex-start;" />
             </engine:VisualElement>
-            <engine:VisualElement class="panelContent">
-                <engine:Label text="About Content" />
+            <engine:VisualElement class="panelContent" style="color: rgb(255, 255, 255); -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Fonts/Poppins-Regular.ttf?fileID=12800000&amp;guid=fd979468792814846a383d7f1485f5d2&amp;type=3#Poppins-Regular&quot;);">
+                <engine:Label text="&lt;b&gt;Instructions&lt;/b&gt;&#10;Rotate the device to see how AR characters react.&#10;&#10;&#10;&lt;b&gt;Story Background&lt;/b&gt;&#10;In the not-so-distant future, Earth&apos;s natural environment has suffered severe destruction. In an attempt to preserve ecosystems, humans created a virtual world called the &quot;Data Forest,&quot; where all plants and animals can exist eternally through digital technology.&#10;However, no matter how perfect the Data Forest seems, it is ultimately just a string of code. The disappearance of real forests has made the world colder and more indifferent. People have grown accustomed to admiring nature in virtual reality, gradually forgetting the lands, rivers, and creatures that are vanishing in the real world.  &#10;&#10;Astra is a bright and curious child who always asks &quot;why?&quot; But he has never seen what a real forest looks like. One day, he discovers a mysterious book. The moment he opens it, an unknown force pulls her inside, transporting him into an unfamiliar forest. There, three guides await his arrival...  &#10;" style="white-space: normal;" />
             </engine:VisualElement>
         </engine:VisualElement>
         <engine:VisualElement name="StartPanel" class="panel" style="overflow: hidden; flex-grow: 1; flex-basis: 0;">
-            <engine:VisualElement style="padding-top: 10%; padding-right: 10%; padding-bottom: 10%; padding-left: 10%; background-image: url(&quot;project://database/Assets/Textures/StartMenuBackground.jpeg?fileID=2800000&amp;guid=7cdfd87ea979c4342b59966a937efea7&amp;type=3#StartMenuBackground&quot;); -unity-background-scale-mode: scale-and-crop; flex-grow: 1;">
+            <engine:VisualElement style="padding-top: 10%; padding-right: 10%; padding-bottom: 10%; padding-left: 10%; flex-grow: 1;">
                 <engine:VisualElement style="flex-grow: 1; justify-content: center;">
                     <engine:VisualElement style="justify-content: center; margin-top: 50px; margin-right: 50px; margin-bottom: 50px; margin-left: 50px;">
                         <engine:Label text="The Secret of the Forest" style="font-size: 200px; -unity-text-align: upper-center; color: rgb(255, 255, 255); white-space: normal; -unity-font-style: bold;" />
                     </engine:VisualElement>
-                    <engine:VisualElement style="padding-top: 10%; padding-right: 10%; padding-bottom: 10%; padding-left: 10%; justify-content: flex-start; align-items: center;">
-                        <engine:Button text="Start Adventure" name="Start" class="bubble" style="background-color: rgb(125, 239, 84);" />
-                        <engine:Button text="Settings" name="Settings" class="bubble" style="background-color: rgb(146, 243, 255);" />
-                        <engine:Button text="About" name="About" class="bubble" style="background-color: rgb(246, 250, 97);" />
-                        <engine:Button text="Exit" name="Exit" class="bubble" style="background-color: rgb(255, 129, 129);" />
+                    <engine:VisualElement style="padding-top: 10%; padding-right: 10%; padding-bottom: 10%; padding-left: 10%; justify-content: flex-start; align-items: center; -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Fonts/Poppins-Regular.ttf?fileID=12800000&amp;guid=fd979468792814846a383d7f1485f5d2&amp;type=3#Poppins-Regular&quot;); color: rgb(255, 255, 255);">
+                        <engine:Button text="Start Adventure" name="Start" class="bubble" style="background-color: rgba(125, 239, 84, 0.3);" />
+                        <engine:Button text="About" name="About" class="bubble" style="background-color: rgba(246, 250, 97, 0.3);" />
+                        <engine:Button text="Levels" name="Levels" class="bubble" style="background-color: rgba(97, 211, 250, 0.3);" />
+                        <engine:Button text="Exit" name="Exit" class="bubble" style="background-color: rgba(255, 129, 129, 0.3);" />
                     </engine:VisualElement>
                 </engine:VisualElement>
             </engine:VisualElement>

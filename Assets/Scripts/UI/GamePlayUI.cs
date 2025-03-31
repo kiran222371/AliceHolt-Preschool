@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GamePlayUI : MonoBehaviour
 {
-    [SerializeField] private string nextSceneName;
     [Header("Dialouge Animation")]
     [HideInInspector] public VisualElement dialougeBox;
     [SerializeField] private float charPerSec;
@@ -17,13 +16,18 @@ public class GamePlayUI : MonoBehaviour
     private bool choiceShown;
     void Start()
     {
-        root = GetComponent<UIDocument>().rootVisualElement;
+        root = FindFirstObjectByType<UIDocument>().rootVisualElement;
         speakerLabel = root.Q<Label>("SpeakerLabel");
         dialougeLabel = root.Q<Label>("DialougeLabel");
         dialougeBox = root.Q<VisualElement>("DialougeBox");
         scriptPlayer = FindFirstObjectByType<StoryScriptPlayer>();
         dialougeBox.AddManipulator(new Clickable(() => { scriptPlayer?.NextLine(null); }));
         scriptPlayer?.NextLine(null);
+
+        root.Q<Button>("HomeButton").clicked += () =>
+        {
+            SceneManager.LoadScene("Menu");
+        };
     }
 
     void OnValidate()
@@ -42,11 +46,10 @@ public class GamePlayUI : MonoBehaviour
         var choicoePanel = root.Q<VisualElement>("ChoicePanel");
         choicoePanel.style.opacity = 1;
         var choice = root.Q<Button>("Choice");
-        choice.text = "Next Scene";
+        choice.text = "Return to Menu";
         choice.clicked += () =>
         {
-            SceneManager.LoadSceneAsync(nextSceneName, LoadSceneMode.Additive);
-            SceneManager.UnloadSceneAsync(gameObject.scene);
+            SceneManager.LoadSceneAsync("Menu");
         };
         choiceShown = true;
     }
