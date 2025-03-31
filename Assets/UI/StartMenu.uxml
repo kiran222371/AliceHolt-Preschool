@@ -15,7 +15,7 @@
             </engine:VisualElement>
         </engine:VisualElement>
         <engine:VisualElement name="AboutPanel" class="panel" style="flex-basis: 0; overflow: hidden; flex-grow: 0;">
-            <engine:VisualElement class="header">
+            <engine:VisualElement class="header">/
                 <engine:Button name="CloseAbout" style="width: 100px; height: 100px; margin-top: 20px; margin-right: 20px; margin-bottom: 20px; margin-left: 20px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; justify-content: flex-start; background-image: url(&quot;project://database/Assets/UI/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=-2236324273849735119&amp;guid=d87cc5413c4b8114eaf662aa5432af00&amp;type=3#arrow-left@2x&quot;); background-color: rgba(188, 188, 188, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);" />
                 <engine:VisualElement style="flex-grow: 1; padding-top: 30px; padding-right: 30px; padding-bottom: 30px; padding-left: 30px; align-self: center;">
                     <engine:Label text="About" style="-unity-text-align: middle-left; -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Fonts/MODULAR-14.otf?fileID=12800000&amp;guid=418a032fd95c45944b379a053eee70f4&amp;type=3#MODULAR-14&quot;);" />
@@ -29,7 +29,7 @@
             <engine:VisualElement style="padding-top: 10%; padding-right: 10%; padding-bottom: 10%; padding-left: 10%; flex-grow: 1;">
                 <engine:VisualElement style="flex-grow: 1; justify-content: center;">
                     <engine:VisualElement style="justify-content: center; margin-top: 50px; margin-right: 50px; margin-bottom: 50px; margin-left: 50px;">
-                        <engine:Label text="The Secret of the Forest" style="font-size: 200px; -unity-text-align: upper-center; color: rgb(255, 255, 255); white-space: normal; -unity-font-style: bold;" />
+                        <engine:Label text="The Secret of the Forest" style="font-size: 100px; -unity-text-align: upper-center; color: rgb(255, 255, 255); white-space: normal; -unity-font-style: normal; -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Fonts/MODULAR-14.otf?fileID=12800000&amp;guid=418a032fd95c45944b379a053eee70f4&amp;type=3#MODULAR-14&quot;);" />
                     </engine:VisualElement>
                     <engine:VisualElement style="padding-top: 10%; padding-right: 10%; padding-bottom: 10%; padding-left: 10%; justify-content: flex-start; align-items: center; -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Fonts/Poppins-Regular.ttf?fileID=12800000&amp;guid=fd979468792814846a383d7f1485f5d2&amp;type=3#Poppins-Regular&quot;); color: rgb(255, 255, 255);">
                         <engine:Button text="Start Adventure" name="Start" class="bubble" style="background-color: rgba(125, 239, 84, 0.3);" />
