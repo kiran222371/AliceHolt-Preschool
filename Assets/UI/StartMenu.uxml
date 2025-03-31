@@ -29,7 +29,7 @@
             <engine:VisualElement style="padding-top: 10%; padding-right: 10%; padding-bottom: 10%; padding-left: 10%; flex-grow: 1;">
                 <engine:VisualElement style="flex-grow: 1; justify-content: center;">
                     <engine:VisualElement style="justify-content: center; margin-top: 50px; margin-right: 50px; margin-bottom: 50px; margin-left: 50px;">
-                        <engine:Label text="The Secret of the Forest" style="font-size: 100px; -unity-text-align: upper-center; color: rgb(255, 255, 255); white-space: normal; -unity-font-style: normal; -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Fonts/MODULAR-14.otf?fileID=12800000&amp;guid=418a032fd95c45944b379a053eee70f4&amp;type=3#MODULAR-14&quot;);" />
+                        <engine:Label text="The Secret of the Forest" style="font-size: 200px; -unity-text-align: upper-center; color: rgb(255, 255, 255); white-space: normal; -unity-font-style: bold;" />
                     </engine:VisualElement>
                     <engine:VisualElement style="padding-top: 10%; padding-right: 10%; padding-bottom: 10%; padding-left: 10%; justify-content: flex-start; align-items: center; -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Fonts/Poppins-Regular.ttf?fileID=12800000&amp;guid=fd979468792814846a383d7f1485f5d2&amp;type=3#Poppins-Regular&quot;); color: rgb(255, 255, 255);">
                         <engine:Button text="Start Adventure" name="Start" class="bubble" style="background-color: rgba(125, 239, 84, 0.3);" />
